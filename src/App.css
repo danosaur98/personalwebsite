@@ -1,0 +1,78 @@
+.App {
+  text-align: center
+}
+.Board {
+  position:absolute;
+  color: yellow;
+  z-index: 100;
+}
+
+.App-header {
+  background-color: #000000;
+  min-height: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1vmin);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.App-main {
+  background-color: #000000;
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1vmin);
+  color: white;
+}
+
+.App-footer {
+  background-color: #0a89f1;
+  min-height: 100vh;
+
+}
+
+.App-logo-container {
+  top:40vmin;
+  position:absolute;
+}
+.App-logo {
+  animation: App-logo-pulse infinite 1s linear;
+  height: 25vmin;
+}
+
+.Top-Text {
+  position: absolute;
+  top: 30vmin;
+  font-size: calc(10px + 1vmin);
+
+}
+
+.Logo-Text{
+  position: absolute;
+  color: black;
+  top: 50vmin;
+  font-size: calc(10px + 1vmin);
+  z-index: 1;
+}
+
+@keyframes App-logo-pulse {
+  from {
+    height: 25vmin;
+  }
+  10% {
+    height: 27vmin;
+  }
+  20% {
+    height: 25vmin;
+  }
+  to {
+    height: 25vmin;
+  }
+}
