@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import logo from './Love_Heart_symbol.svg';
-import Board from './Board';
+import Square from './Square';
 var texts = ["yo", "whats up", "test", "Stacy"];
 
 class App extends Component {
@@ -10,12 +10,16 @@ class App extends Component {
     this.state = {
       text: texts[0],
       index: 0,
-      height:  document.body.clientHeight,
+      height: document.body.clientHeight,
       width: document.body.clientWidth,
+      squares: []
     };
   }
-
   componentDidMount() {
+    this._handleResize = this.handleResize.bind(this);
+    window.addEventListener('resize', this._handleResize);
+    setTimeout(this._handleResize, 1000);
+
     this.interval = setInterval(() =>
       this.setState({
         text: texts[this.state.index],
@@ -23,20 +27,38 @@ class App extends Component {
       }), 1000);
   }
 
+  handleResize() {
+    let s = []
+    console.log("??")
+    //var numSquares = document.body.clientHeight*document.body.clientWidth;
+    var numSquares = 100;
+    for (var i = 0; i < numSquares; i++){
+      s.push(<Square key={i}></Square>)
+    }
+    this.setState({
+      width: document.body.clientWidth,
+      height: document.body.clientHeight,
+      squares: s
+    });
+  }
+
   componentWillUnmount() {
     clearInterval(this.interval);
     window.removeEventListener('resize', this._handleResize);
-
   }
+
   render() {
     return (
-      <Board height={this.state.height} width = {this.state.width}>
+      <div className="App">
+        <div className="Board">
+          {this.state.squares}
+        </div>
         <header className="App-header">
           Here's my header!
         </header>
         <div className="App-main">
           <div className="Top-Text">
-            Hey I'm Daniel! 
+            Hey I'm Daniel! Height: {this.state.height} Width: {this.state.width}
           </div>
           <div className="Logo-Text">
             {this.state.text}
@@ -50,7 +72,7 @@ class App extends Component {
         <footer className="App-footer">
           Here's my footer!
         </footer>
-      </Board>
+      </div>
     );
   }
 }
