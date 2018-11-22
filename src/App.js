@@ -27,18 +27,32 @@ class App extends Component {
       }), 1000);
   }
 
-  handleResize() {
-    let s = []
-    console.log("??")
-    //var numSquares = document.body.clientHeight*document.body.clientWidth;
-    var numSquares = 100;
-    for (var i = 0; i < numSquares; i++){
-      s.push(<Square key={i}></Square>)
+  growBoard() {
+    let children = []
+    if (this.state.squares) {
+      var board = this.state.squares;
+      console.log(board)
+      console.log(board[0])
+      for (let j = 0; j <100; j++) {
+        children.push(<td className="Square">{}</td>)
+      }
+
+      //Create the parent and add the children
+      board.push(<tr>{children}</tr>)
+
+      this.setState({
+        squares: board
+      })
     }
+    setTimeout(this.growBoard.bind(this), 100);
+
+  }
+
+  handleResize() {
+    this.growBoard();
     this.setState({
       width: document.body.clientWidth,
       height: document.body.clientHeight,
-      squares: s
     });
   }
 
