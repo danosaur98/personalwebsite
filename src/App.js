@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import logo from './Love_Heart_symbol.svg';
 import Square from './Square';
+import Animation from './Animation';
 var texts = ["yo", "whats up", "test", "Stacy"];
 
 class App extends Component {
@@ -27,29 +28,7 @@ class App extends Component {
       }), 1000);
   }
 
-  growBoard() {
-    let children = []
-    if (this.state.squares) {
-      var board = this.state.squares;
-      console.log(board)
-      console.log(board[0])
-      for (let j = 0; j <100; j++) {
-        children.push(<td className="Square">{}</td>)
-      }
-
-      //Create the parent and add the children
-      board.push(<tr>{children}</tr>)
-
-      this.setState({
-        squares: board
-      })
-    }
-    setTimeout(this.growBoard.bind(this), 100);
-
-  }
-
   handleResize() {
-    this.growBoard();
     this.setState({
       width: document.body.clientWidth,
       height: document.body.clientHeight,
@@ -65,7 +44,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="Board">
-          {this.state.squares}
+          <Animation width = {this.state.width} height = {this.state.height}></Animation>
         </div>
         <header className="App-header">
           Here's my header!

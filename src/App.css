@@ -2,20 +2,16 @@
   text-align: center
 }
 .Board {
-  position:absolute;
   color: yellow;
-  z-index: 100;
+  top:35vmin;
+  position: absolute;
 }
 
 .Square {
   background: #fff;
-  border: 0px;
-  font-size: 10px;
-  height: 5px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  width: 5px;
+  height: 10px;
+  width: 10px;
+  float: left;
 }
 
 .App-header {
@@ -53,9 +49,11 @@
   top:40vmin;
   position:absolute;
 }
+
 .App-logo {
   animation: App-logo-pulse infinite 1s linear;
   height: 25vmin;
+  z-index: 3;
 }
 
 .Top-Text {
