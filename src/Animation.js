@@ -1,3 +1,5 @@
+//credits: https://philna.sh/blog/2018/09/27/techniques-for-animating-on-the-canvas-in-react/
+
 import React, { Component } from 'react';
 import './App.css';
 import Canvas from './Canvas';

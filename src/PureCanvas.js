@@ -9,9 +9,7 @@ class PureCanvas extends React.Component {
         if (this.props.width && this.props.width != 0) {
             this.setState({ expectedWidth: this.props.width })
         }
-        if (this.props.width && this.state && this.state.expectedWidth && Math.abs(this.state.expectedWidth - this.props.width) >=50) {
-            console.log("what" + this.props.width)
-            console.log(this.state.expectedWidth)
+        if (this.props.width && this.state && this.state.expectedWidth && Math.abs(this.state.expectedWidth - this.props.width) >=20) {
             window.location.reload();
         }
     }

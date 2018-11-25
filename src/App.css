@@ -3,7 +3,6 @@
 }
 .Board {
   color: yellow;
-  top:35vmin;
   position: absolute;
 }
 
@@ -46,19 +45,19 @@
 }
 
 .App-logo-container {
-  top:40vmin;
+  top:40vh;
   position:absolute;
 }
 
 .App-logo {
   animation: App-logo-pulse infinite 1s linear;
-  height: 25vmin;
+  height: 25vh;
   z-index: 3;
 }
 
 .Top-Text {
   position: absolute;
-  top: 30vmin;
+  top: 30vh;
   font-size: calc(10px + 1vmin);
 
 }
@@ -66,22 +65,22 @@
 .Logo-Text{
   position: absolute;
   color: black;
-  top: 50vmin;
+  top: 50vh;
   font-size: calc(10px + 1vmin);
   z-index: 1;
 }
 
 @keyframes App-logo-pulse {
   from {
-    height: 25vmin;
+    height: 25vh;
   }
   10% {
-    height: 27vmin;
+    height: 27vh;
   }
   20% {
-    height: 25vmin;
+    height: 25vh;
   }
   to {
-    height: 25vmin;
+    height: 25vh;
   }
 }
