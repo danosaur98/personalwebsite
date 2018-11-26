@@ -58,7 +58,7 @@ class App extends Component {
           </div>
           <div className="Logo-Text"></div>
           <div className="App-logo-container">
-            <img src={logo} className="App-logo" alt="logo" />
+            {/* <img src={logo} className="App-logo" alt="logo" /> */}
           </div>
 
         </div>
