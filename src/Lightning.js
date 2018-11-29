@@ -14,6 +14,15 @@ export default function Lightning(x, y, length, angle, ctx) {
 
     console.log(this.x, this.y)
     this.draw = function (length) {
+        this.ctx.lineTo(0, length);
+        this.ctx.moveTo(0, length);
+        if (length > 4){
+            this.ctx.save();
+            this.ctx.rotate(this.angle);
+            draw(length*0.67);
+            this.ctx.restore();
+            this.ctx.save();
+        }
         // this.ctx.save();
         // this.ctx.beginPath();
         // this.ctx.translate(this.x, this.y);

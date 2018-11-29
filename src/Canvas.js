@@ -22,7 +22,7 @@ class Canvas extends React.Component {
         this.ctx.clearRect(0, 0, width, height);
         this.ctx.beginPath();
         if (this.state.lightning.length < 1) {
-            this.state.lightning.push(new Lightning(width / 2, window.innerHeight / 2, 10, Math.PI/4, this.ctx));
+            this.state.lightning.push(new Lightning(width / 2, window.innerHeight / 2, 10, Math.PI/8, this.ctx));
         }
         this.state.lightning.forEach(function (element) {
             element.update();
